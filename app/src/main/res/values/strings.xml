@@ -2,4 +2,5 @@
     <string name="app_name">ProductivityApp</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Calendar</string>
+    <string name="test">test</string>
 </resources>
