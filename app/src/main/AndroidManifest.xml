@@ -14,9 +14,12 @@
         android:theme="@style/Theme.ProductivityApp"
         tools:targetApi="31">
         <activity
+            android:name=".CalendarActivity"
+            android:exported="false" />
+        <activity
             android:name=".InventoryScreen"
             android:exported="false"
-            android:label="Inventory"/>
+            android:label="Inventory" />
         <activity
             android:name=".SettingsScreen"
             android:exported="false"
