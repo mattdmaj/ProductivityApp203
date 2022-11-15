@@ -38,6 +38,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        //Inventory screen
         Button buttonI = (Button) homeView.findViewById(R.id.inventory);
         buttonI.setOnClickListener(new View.OnClickListener() {
             @Override
