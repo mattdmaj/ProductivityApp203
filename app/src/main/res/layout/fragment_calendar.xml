@@ -7,11 +7,37 @@
     android:orientation="vertical"
     tools:context=".ui.dashboard.CalendarFragment">
 
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:layout_marginStart="120dp"
+        android:text="@string/date_field" />
+
     <CalendarView
         android:id="@+id/calendar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="19dp"
-        android:layout_marginTop="80dp"></CalendarView>
+        android:layout_marginStart="30dp">
+
+    </CalendarView>
+
+    <Button
+        android:id="@+id/schedule_button"
+        android:layout_width="178dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="170dp"
+        android:text="Schedule Task"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/delete_button"
+        android:layout_width="178dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="170dp"
+        android:text="Delete Task"
+        tools:ignore="HardcodedText" />
 
 </LinearLayout>

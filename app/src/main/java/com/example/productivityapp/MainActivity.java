@@ -28,6 +28,25 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        Button buttonS = findViewById(R.id.settings);
+        buttonS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,SettingsScreen.class);
+                startActivity(intent);
+
+            }
+        });
+
+        Button buttonI = findViewById(R.id.inventory);
+        buttonI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,InventoryScreen.class);
+                startActivity(intent);
+            }
+        });
+
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
