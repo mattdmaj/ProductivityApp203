@@ -5,7 +5,8 @@ import android.app.Application;
 import androidx.lifecycle.LiveData;
 
 import java.util.List;
-
+// Todo: So far the project runs OK with no errors WITHOUT repository,
+//  get Room working using only the DAO and entity
 public class ProductivityRepository {
 
 /*    private PointsDao mPointsDao;
