@@ -9,16 +9,16 @@ import java.util.List;
 //  get Room working using only the DAO and entity
 public class ProductivityRepository {
 
-/*    private PointsDao mPointsDao;
+    private ProductivityDao mProductivityDao;
     private LiveData<List<Points>> mPoints;
 
     ProductivityRepository(Application application){
         RoomDatabase db = RoomDatabase.getDatabase(application);
-        mPointsDao = db.pointsDao();
+        mProductivityDao = db.productivityDao();
     }
 
     LiveData<List<Points>> getPoints(){
         return mPoints;
-    }*/
+    }
 
 }

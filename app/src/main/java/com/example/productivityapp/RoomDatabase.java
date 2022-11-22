@@ -45,15 +45,10 @@ public abstract class RoomDatabase extends androidx.room.RoomDatabase {
             // comment out the following block
             databaseWriteExecutor.execute(() -> {
                 // Populate the database in the background.
-                // If you want to start with more words, just add them.
-                /*WordDao dao = INSTANCE.wordDao();
-                dao.deleteAll();
-
-                Word word = new Word("Hello");
-                dao.insert(word);
-                word = new Word("World");
-                dao.insert(word);*/
                 ProductivityDao dao = INSTANCE.productivityDao();
+                // in the tutorial Paul used, there was a deleteAll()
+                // method; this will NOT be implemented because the user's
+                // points should be saved
 
                 Points points = new Points(0);
             });
