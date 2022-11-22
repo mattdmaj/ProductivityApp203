@@ -8,14 +8,14 @@ import androidx.room.PrimaryKey;
 @Entity (tableName = "points")
 public class Points {
 
+
     @PrimaryKey
     @NonNull
     @ColumnInfo(name = "points")
-    public int points;
+    public int mPoints;
 
-    public Points(@NonNull int points) {this.points = points;}
+    public Points(@NonNull int points) {this.mPoints = points;}
 
-    public int getPoints(){
-        return this.points;
-    }
+    public int getPoints() {return this.mPoints;}
+
 }
