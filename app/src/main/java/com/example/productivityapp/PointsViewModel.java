@@ -4,6 +4,7 @@ import android.app.Application;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+import androidx.room.Update;
 
 import java.util.List;
 
@@ -27,4 +28,7 @@ public class PointsViewModel extends AndroidViewModel {
 
 
     LiveData<List<Points>> getPoints() { return mPoints; }
+
+    /* THIS COULD BE IMPLEMENTED LATER.
+    @Update */
 }
