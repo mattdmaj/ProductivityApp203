@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         RecyclerView recyclerView = findViewById(R.id.money);
-        final PointsAdapter adapter = new PointsAdapter(new PointsAdapter.PointsDiff());
+        PointsAdapter adapter = new PointsAdapter(new PointsAdapter.PointsDiff());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
