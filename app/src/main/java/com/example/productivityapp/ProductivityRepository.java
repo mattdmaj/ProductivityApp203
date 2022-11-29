@@ -15,6 +15,7 @@ public class ProductivityRepository {
     ProductivityRepository(Application application){
         RoomDatabase db = RoomDatabase.getDatabase(application);
         mProductivityDao = db.productivityDao();
+        mPoints = mProductivityDao.getPoints();
     }
 
     LiveData<List<Points>> getPoints(){

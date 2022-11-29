@@ -18,14 +18,13 @@ public class PointsViewModel extends AndroidViewModel {
     private ProductivityRepository mRepository;
 
     // this is Originally an integer, but may need to become a liveData list
-    private LiveData<List<Points>> mPoints;
+    private final LiveData<List<Points>> mPoints;
 
     public PointsViewModel(Application application){
         super(application);
         mRepository = new ProductivityRepository(application);
         mPoints = mRepository.getPoints();
     }
-
 
     LiveData<List<Points>> getPoints() { return mPoints; }
 

@@ -11,11 +11,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.productivityapp.InventoryScreen;
 import com.example.productivityapp.MainActivity;
+import com.example.productivityapp.PointsAdapter;
+import com.example.productivityapp.PointsViewModel;
 import com.example.productivityapp.R;
 import com.example.productivityapp.SettingsScreen;
+import com.example.productivityapp.databinding.ActivityMainBinding;
 import com.example.productivityapp.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
@@ -27,7 +32,6 @@ public class HomeFragment extends Fragment {
         HomeViewModel homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
 
         View homeView = inflater.inflate(R.layout.fragment_home, container, false);
-
 
 
         Button buttonS = (Button) homeView.findViewById(R.id.settings);
