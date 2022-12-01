@@ -18,6 +18,7 @@ import com.example.productivityapp.R;
 import com.example.productivityapp.SettingsScreen;
 import com.example.productivityapp.databinding.FragmentHomeBinding;
 
+
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
