@@ -2,6 +2,8 @@ package com.example.productivityapp;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
+import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
@@ -12,6 +14,9 @@ public interface ProductivityDao {
     @Query("SELECT * FROM points")
     // want a list of points BUT int is technically returned instead.
     LiveData<List<Points>> getPoints();
+
+    @Insert
+    void insert(Points points);
 
     /*@Update
     // Todo: how will we update the points? Will we pass in the number of

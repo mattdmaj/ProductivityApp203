@@ -51,6 +51,7 @@ public abstract class RoomDatabase extends androidx.room.RoomDatabase {
                 // points should be saved
 
                 Points points = new Points(0);
+                dao.insert(points);
             });
         }
     };

@@ -20,6 +20,7 @@ class PointsViewHolder extends RecyclerView.ViewHolder {
     // currently an int; there is potential to turn to string but could cause issues
     // furthermore, if there are issues, this can be changed up.
     public void bind(int text){
+
         pointsItemView.setText(text);
     }
 
