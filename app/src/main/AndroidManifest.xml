@@ -14,9 +14,9 @@
         android:theme="@style/Theme.ProductivityApp"
         tools:targetApi="31">
         <activity
-            android:label="About Us"
             android:name=".AboutUsScreen"
-            android:exported="false" />
+            android:exported="false"
+            android:label="About Us" />
         <activity
             android:name=".CalendarActivity"
             android:exported="false" />

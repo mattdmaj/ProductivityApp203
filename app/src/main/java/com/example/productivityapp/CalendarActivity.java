@@ -8,6 +8,8 @@ import androidx.annotation.NonNull;
 public class CalendarActivity extends MainActivity {
     CalendarView calendarView;
     TextView textView;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,6 +17,8 @@ public class CalendarActivity extends MainActivity {
 
         calendarView = findViewById(R.id.calendar);
         textView = findViewById(R.id.textView3);
+
+
 
         new CalendarView.OnDateChangeListener() {
             @Override

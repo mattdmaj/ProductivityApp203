@@ -29,7 +29,7 @@ public class HomeFragment extends Fragment {
         View homeView = inflater.inflate(R.layout.fragment_home, container, false);
 
 
-
+        //Settings Screen
         Button buttonS = (Button) homeView.findViewById(R.id.settings);
         buttonS.setOnClickListener(new View.OnClickListener() {
             @Override

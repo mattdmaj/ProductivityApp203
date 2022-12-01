@@ -7,15 +7,57 @@
     tools:context=".AboutUsScreen">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/WHO"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="About the app, the creators, etc.."
-        android:textColor="@color/black"
-        android:textSize="17dp"
+        android:text="WHO"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.087" />
+
+    <TextView
+        android:id="@+id/WHY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WHY"
+        android:textSize="40dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.654" />
+
+    <TextView
+        android:id="@+id/Creators"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Matthew Majchrzak \n\n\n  Amra Ibrahimovic \n\n\n        Paul Lamy \n\n\n    Erin MacDonald"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.291" />
+
+    <TextView
+        android:id="@+id/WhyEx"
+        android:layout_width="334dp"
+        android:layout_height="148dp"
+        android:text="This project is for CS-203. \n We wanted to create a productivity app \n because it is
+helpful for students that \n want to improve their learning skills. It \n is also
+rewarding being able to \ncustomize an avatar, making it fun to study!"
+        android:textAlignment="center"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.897" />
 </androidx.constraintlayout.widget.ConstraintLayout>
