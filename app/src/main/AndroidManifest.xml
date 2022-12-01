@@ -18,6 +18,10 @@
             android:name=".AboutUsScreen"
             android:exported="false" />
         <activity
+            android:label="Schedule A Task"
+            android:name=".ScheduleTask"
+            android:exported="false" />
+        <activity
             android:name=".CalendarActivity"
             android:exported="false" />
         <activity
