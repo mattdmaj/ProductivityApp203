@@ -76,7 +76,7 @@
         app:layout_constraintVertical_bias="0.463" />
 
     <Switch
-        android:id="@+id/NightSwitch"
+        android:id="@+id/nightSwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minWidth="48dp"
