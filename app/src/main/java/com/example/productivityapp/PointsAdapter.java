@@ -4,16 +4,14 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
-import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.ArrayList;
 
 public class PointsAdapter extends ListAdapter<Points, PointsViewHolder> {
+    private Context mContext;
+
     public PointsAdapter(@NonNull DiffUtil.ItemCallback<Points> diffCallback) {
         super(diffCallback);
     }
@@ -30,7 +28,7 @@ public class PointsAdapter extends ListAdapter<Points, PointsViewHolder> {
         holder.bind(current.getPoints());
     }
 
-    static class PointsDiff extends DiffUtil.ItemCallback<Points> {
+    public static class PointsDiff extends DiffUtil.ItemCallback<Points> {
         @Override
         public boolean areItemsTheSame(@NonNull Points oldItem, @NonNull Points newItem) {
             return oldItem == newItem;

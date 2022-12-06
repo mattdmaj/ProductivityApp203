@@ -1,5 +1,6 @@
 package com.example.productivityapp.ui.home;
 
+import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.productivityapp.InventoryScreen;
 import com.example.productivityapp.MainActivity;
+import com.example.productivityapp.Points;
 import com.example.productivityapp.PointsAdapter;
 import com.example.productivityapp.PointsViewModel;
 import com.example.productivityapp.R;
@@ -26,6 +28,9 @@ import com.example.productivityapp.databinding.FragmentHomeBinding;
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
+    private Points points;
+    private PointsViewModel pointsViewModel;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -33,6 +38,19 @@ public class HomeFragment extends Fragment {
 
         View homeView = inflater.inflate(R.layout.fragment_home, container, false);
 
+        /*RecyclerView recyclerView = homeView.findViewById(R.id.money);
+        recyclerView.setHasFixedSize(true);
+        PointsAdapter adapter = new PointsAdapter(new PointsAdapter.PointsDiff());
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        PointsViewModel mPointsViewModel = new ViewModelProvider(this).get(PointsViewModel.class);
+
+        // trying to execute the following line but cannot because it is trying to do stuff on something that is NULL
+        mPointsViewModel.getPoints().observe(getViewLifecycleOwner(), points -> { adapter.submitList(points); });*/
+
+        TextView pointsTextView = homeView.findViewById(R.id.money);
+        // points = pointsViewModel.getPoints();
 
         Button buttonS = (Button) homeView.findViewById(R.id.settings);
         buttonS.setOnClickListener(new View.OnClickListener() {
@@ -64,5 +82,9 @@ public class HomeFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    public PointsViewModel getPointsViewModel() {
+        return pointsViewModel;
     }
 }

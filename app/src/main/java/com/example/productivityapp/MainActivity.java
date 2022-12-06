@@ -49,18 +49,6 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        RecyclerView recyclerView = findViewById(R.id.money);
-        PointsAdapter adapter = new PointsAdapter(new PointsAdapter.PointsDiff());
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        mPointsViewModel = new ViewModelProvider(this).get(PointsViewModel.class);
-
-        // trying to execute the following line but cannot because it is trying to do stuff on something that is NULL
-        mPointsViewModel.getPoints().observe(this, points -> {
-            adapter.submitList(points);
-        });
-
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.

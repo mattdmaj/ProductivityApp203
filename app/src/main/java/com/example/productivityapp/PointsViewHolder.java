@@ -17,10 +17,7 @@ class PointsViewHolder extends RecyclerView.ViewHolder {
         pointsItemView = itemView.findViewById(R.id.tvPoints);
     }
 
-    // currently an int; there is potential to turn to string but could cause issues
-    // furthermore, if there are issues, this can be changed up.
     public void bind(int text){
-
         pointsItemView.setText(text);
     }
 
