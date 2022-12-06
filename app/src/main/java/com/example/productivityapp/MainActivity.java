@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
+
         SharedPreferences switchPref = getSharedPreferences("save2", MODE_PRIVATE);
         boolean isNightMode = switchPref.getBoolean("Night",true);
         if (isNightMode) {

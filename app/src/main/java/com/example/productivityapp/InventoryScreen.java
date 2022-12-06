@@ -6,12 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.productivityapp.databinding.ActivityMainBinding;
 import com.example.productivityapp.ui.home.HomeFragment;
 
 public class InventoryScreen extends AppCompatActivity {
-    boolean[] own = {true,true,false,false,false,false};
+    boolean[] own = {false,false,false,false,false,false};
 
     public Bundle change = new Bundle();
     @Override
@@ -24,9 +25,9 @@ public class InventoryScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(own[0] == false){
-
+                    Toast.makeText(getApplicationContext(),"You dont own this ",Toast.LENGTH_LONG).show();
                 } else {
-                    Intent basepass = new Intent(InventoryScreen.this, HomeFragment.class);
+                    Intent basepass = new Intent(InventoryScreen.this, MainActivity.class);
                     basepass.putExtra("enable","visible");
                     startActivity(basepass);
                 }
@@ -38,10 +39,10 @@ public class InventoryScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(own[1] == false){
-
+                    Toast.makeText(getApplicationContext(),"You dont own this ",Toast.LENGTH_LONG).show();
                 } else {
-                    Intent swimpass = new Intent(InventoryScreen.this, HomeFragment.class);
-                    swimpass.putExtra("enable","visible");
+                    Intent swimpass = new Intent(InventoryScreen.this, MainActivity.class);
+                    swimpass.putExtra("enable1","visible");
                     startActivity(swimpass);
                 }
             }
@@ -51,7 +52,7 @@ public class InventoryScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(own[2] == false){
-
+                    Toast.makeText(getApplicationContext(),"You dont own this ",Toast.LENGTH_LONG).show();
                 } else {
 
                 }
@@ -62,7 +63,7 @@ public class InventoryScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(own[3] == false){
-
+                    Toast.makeText(getApplicationContext(),"You dont own this ",Toast.LENGTH_LONG).show();
                 } else {
 
                 }
@@ -73,7 +74,7 @@ public class InventoryScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(own[4] == false){
-
+                    Toast.makeText(getApplicationContext(),"You dont own this ",Toast.LENGTH_LONG).show();
                 } else {
 
                 }
@@ -84,7 +85,7 @@ public class InventoryScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(own[5] == false){
-
+                    Toast.makeText(getApplicationContext(),"You dont own this ",Toast.LENGTH_LONG).show();
                 } else {
 
                 }
