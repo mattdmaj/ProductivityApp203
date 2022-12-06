@@ -22,8 +22,8 @@ public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        String[] visible = {"visible","invisible","invisible","invisible","invisible","invisible"};
         HomeViewModel homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
 
         View homeView = inflater.inflate(R.layout.fragment_home, container, false);

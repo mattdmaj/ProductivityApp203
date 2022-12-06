@@ -8,18 +8,28 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.productivityapp.databinding.ActivityMainBinding;
+import com.example.productivityapp.ui.home.HomeFragment;
 
 public class InventoryScreen extends AppCompatActivity {
-    boolean[] own = {true,false,false,false,false,false};
+    boolean[] own = {true,true,false,false,false,false};
+
+    public Bundle change = new Bundle();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventory_screen);
+
         Button base = findViewById(R.id.base_button);
         base.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(own[0] == false){
 
+                } else {
+                    Intent basepass = new Intent(InventoryScreen.this, HomeFragment.class);
+                    basepass.putExtra("enable","visible");
+                    startActivity(basepass);
+                }
             }
         });
 
@@ -28,9 +38,11 @@ public class InventoryScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(own[1] == false){
-                    
-                } else {
 
+                } else {
+                    Intent swimpass = new Intent(InventoryScreen.this, HomeFragment.class);
+                    swimpass.putExtra("enable","visible");
+                    startActivity(swimpass);
                 }
             }
         });
