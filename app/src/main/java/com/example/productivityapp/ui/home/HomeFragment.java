@@ -28,8 +28,7 @@ import com.example.productivityapp.databinding.FragmentHomeBinding;
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
-    private Points points;
-    private PointsViewModel pointsViewModel;
+    private int pointsInt;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -48,9 +47,6 @@ public class HomeFragment extends Fragment {
 
         // trying to execute the following line but cannot because it is trying to do stuff on something that is NULL
         mPointsViewModel.getPoints().observe(getViewLifecycleOwner(), points -> { adapter.submitList(points); });*/
-
-        TextView pointsTextView = homeView.findViewById(R.id.money);
-        // points = pointsViewModel.getPoints();
 
         Button buttonS = (Button) homeView.findViewById(R.id.settings);
         buttonS.setOnClickListener(new View.OnClickListener() {
@@ -73,8 +69,14 @@ public class HomeFragment extends Fragment {
             }
         });
 
-       // final TextView textView = binding.textHome;
-       // homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        PointsViewModel pointsViewModel = new ViewModelProvider(this).get(PointsViewModel.class);
+
+        TextView pointsTextView = (TextView) homeView.findViewById(R.id.money);
+
+        pointsInt = pointsViewModel.getPoints();
+
+        pointsTextView.setText(pointsInt);
+
         return homeView;
     }
 
@@ -82,9 +84,5 @@ public class HomeFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
-    }
-
-    public PointsViewModel getPointsViewModel() {
-        return pointsViewModel;
     }
 }

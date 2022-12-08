@@ -20,7 +20,7 @@ public class PointsViewModel extends AndroidViewModel {
     private ProductivityDao productivityDao;
 
     // this is Originally an integer, but may need to become a liveData list
-    private final LiveData<List<Points>> mPoints;
+    private final int mPoints;
 
     public PointsViewModel(Application application){
         super(application);
@@ -30,7 +30,7 @@ public class PointsViewModel extends AndroidViewModel {
         mPoints = mRepository.getPoints();
     }
 
-    public LiveData<List<Points>> getPoints() { return mPoints; }
+    public int getPoints() { return mPoints; }
 
     /* THIS COULD BE IMPLEMENTED LATER.
     @Update */

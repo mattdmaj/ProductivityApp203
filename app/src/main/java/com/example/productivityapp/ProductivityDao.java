@@ -11,9 +11,9 @@ import java.util.List;
 
 @Dao
 public interface ProductivityDao {
-    @Query("SELECT * FROM points")
+    @Query("SELECT MAX(POINTS) FROM points")
     // want a list of points BUT int is technically returned instead.
-    LiveData<List<Points>> getPoints();
+    int getPoints();
 
     @Insert
     void insert(Points points);
