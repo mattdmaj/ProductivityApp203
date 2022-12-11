@@ -17,12 +17,14 @@ import androidx.navigation.ui.NavigationUI;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.Switch;
 import android.widget.Toast;
 
 import com.example.productivityapp.databinding.ActivityMainBinding;
 
+import java.util.Objects;
 import java.util.Set;
 
 
@@ -33,11 +35,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ImageView pic0 = (ImageView) findViewById(R.id.avatar);
+        ImageView pic1 = (ImageView) findViewById(R.id.swim);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-
 
         SharedPreferences switchPref = getSharedPreferences("save2", MODE_PRIVATE);
         boolean isNightMode = switchPref.getBoolean("Night",true);

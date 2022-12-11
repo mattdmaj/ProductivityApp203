@@ -12,20 +12,22 @@ import com.example.productivityapp.databinding.ActivityMainBinding;
 import com.example.productivityapp.ui.home.HomeFragment;
 
 public class InventoryScreen extends AppCompatActivity {
-    boolean[] own = {false,false,false,false,false,false};
+    boolean[] own = {false,true,false,false,false,false};
 
     public Bundle change = new Bundle();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventory_screen);
-
+        String[] seen = {"visible","invisible","invisible","invisible","invisible","invisible"};
         Button base = findViewById(R.id.base_button);
         base.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(own[0] == false){
                     Toast.makeText(getApplicationContext(),"You dont own this ",Toast.LENGTH_LONG).show();
+                    Intent basepass = new Intent(InventoryScreen.this, MainActivity.class);
+                    basepass.putExtra("enable","invisible");
                 } else {
                     Intent basepass = new Intent(InventoryScreen.this, MainActivity.class);
                     basepass.putExtra("enable","visible");
