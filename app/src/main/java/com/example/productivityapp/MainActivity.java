@@ -35,12 +35,98 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ImageView pic0 = (ImageView) findViewById(R.id.avatar);
-        ImageView pic1 = (ImageView) findViewById(R.id.swim);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        ImageView pic0 = findViewById(R.id.avatar);
+        ImageView pic1 = findViewById(R.id.swim);
+        ImageView pic2 = findViewById(R.id.doc);
+        ImageView pic3 = findViewById(R.id.gang);
+        ImageView pic4 = findViewById(R.id.nes);
+        ImageView pic5 = findViewById(R.id.school);
 
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String enable0 = extras.getString("enable");
+
+            if (Objects.equals(enable0, "visible")){
+                    pic0.setVisibility(View.VISIBLE);
+                    pic1.setVisibility(View.INVISIBLE);
+                    pic2.setVisibility(View.INVISIBLE);
+                    pic3.setVisibility(View.INVISIBLE);
+                    pic4.setVisibility(View.INVISIBLE);
+                    pic5.setVisibility(View.INVISIBLE);
+            }
+        }
+
+        Bundle extras1 = getIntent().getExtras();
+        if (extras1 != null) {
+            String enable1 = extras1.getString("enable1");
+
+            if (Objects.equals(enable1, "visible")){
+                pic0.setVisibility(View.INVISIBLE);
+                pic1.setVisibility(View.VISIBLE);
+                pic2.setVisibility(View.INVISIBLE);
+                pic3.setVisibility(View.INVISIBLE);
+                pic4.setVisibility(View.INVISIBLE);
+                pic5.setVisibility(View.INVISIBLE);
+            }
+        }
+
+        Bundle extras2 = getIntent().getExtras();
+        if (extras2 != null) {
+            String enable2 = extras2.getString("enable2");
+
+            if (Objects.equals(enable2, "visible")){
+                pic0.setVisibility(View.INVISIBLE);
+                pic1.setVisibility(View.INVISIBLE);
+                pic2.setVisibility(View.VISIBLE);
+                pic3.setVisibility(View.INVISIBLE);
+                pic4.setVisibility(View.INVISIBLE);
+                pic5.setVisibility(View.INVISIBLE);
+            }
+        }
+
+        Bundle extras3 = getIntent().getExtras();
+        if (extras3 != null) {
+            String enable3 = extras3.getString("enable3");
+
+            if (Objects.equals(enable3, "visible")){
+                pic0.setVisibility(View.INVISIBLE);
+                pic1.setVisibility(View.INVISIBLE);
+                pic2.setVisibility(View.INVISIBLE);
+                pic3.setVisibility(View.VISIBLE);
+                pic4.setVisibility(View.INVISIBLE);
+                pic5.setVisibility(View.INVISIBLE);
+            }
+        }
+        Bundle extras4 = getIntent().getExtras();
+        if (extras4 != null) {
+            String enable4 = extras4.getString("enable4");
+
+            if (Objects.equals(enable4, "visible")){
+                pic0.setVisibility(View.INVISIBLE);
+                pic1.setVisibility(View.INVISIBLE);
+                pic2.setVisibility(View.INVISIBLE);
+                pic3.setVisibility(View.INVISIBLE);
+                pic4.setVisibility(View.VISIBLE);
+                pic5.setVisibility(View.INVISIBLE);
+            }
+        }
+
+        Bundle extras5 = getIntent().getExtras();
+        if (extras5 != null) {
+            String enable5 = extras5.getString("enable5");
+
+            if (Objects.equals(enable5, "visible")){
+                pic0.setVisibility(View.INVISIBLE);
+                pic1.setVisibility(View.INVISIBLE);
+                pic2.setVisibility(View.INVISIBLE);
+                pic3.setVisibility(View.INVISIBLE);
+                pic4.setVisibility(View.INVISIBLE);
+                pic5.setVisibility(View.VISIBLE);
+            }
+        }
         SharedPreferences switchPref = getSharedPreferences("save2", MODE_PRIVATE);
         boolean isNightMode = switchPref.getBoolean("Night",true);
         if (isNightMode) {

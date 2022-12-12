@@ -12,7 +12,7 @@ import com.example.productivityapp.databinding.ActivityMainBinding;
 import com.example.productivityapp.ui.home.HomeFragment;
 
 public class InventoryScreen extends AppCompatActivity {
-    boolean[] own = {false,true,false,false,false,false};
+    boolean[] own = {true,true,true,true,false,true};
 
     public Bundle change = new Bundle();
     @Override
@@ -26,8 +26,6 @@ public class InventoryScreen extends AppCompatActivity {
             public void onClick(View view) {
                 if(own[0] == false){
                     Toast.makeText(getApplicationContext(),"You dont own this ",Toast.LENGTH_LONG).show();
-                    Intent basepass = new Intent(InventoryScreen.this, MainActivity.class);
-                    basepass.putExtra("enable","invisible");
                 } else {
                     Intent basepass = new Intent(InventoryScreen.this, MainActivity.class);
                     basepass.putExtra("enable","visible");
@@ -56,7 +54,9 @@ public class InventoryScreen extends AppCompatActivity {
                 if(own[2] == false){
                     Toast.makeText(getApplicationContext(),"You dont own this ",Toast.LENGTH_LONG).show();
                 } else {
-
+                    Intent docpass = new Intent(InventoryScreen.this, MainActivity.class);
+                    docpass.putExtra("enable2","visible");
+                    startActivity(docpass);
                 }
             }
         });
@@ -67,7 +67,9 @@ public class InventoryScreen extends AppCompatActivity {
                 if(own[3] == false){
                     Toast.makeText(getApplicationContext(),"You dont own this ",Toast.LENGTH_LONG).show();
                 } else {
-
+                    Intent gangpass = new Intent(InventoryScreen.this, MainActivity.class);
+                    gangpass.putExtra("enable3","visible");
+                    startActivity(gangpass);
                 }
             }
         });
@@ -78,7 +80,9 @@ public class InventoryScreen extends AppCompatActivity {
                 if(own[4] == false){
                     Toast.makeText(getApplicationContext(),"You dont own this ",Toast.LENGTH_LONG).show();
                 } else {
-
+                    Intent nespass = new Intent(InventoryScreen.this, MainActivity.class);
+                    nespass.putExtra("enable4","visible");
+                    startActivity(nespass);
                 }
             }
         });
@@ -89,7 +93,9 @@ public class InventoryScreen extends AppCompatActivity {
                 if(own[5] == false){
                     Toast.makeText(getApplicationContext(),"You dont own this ",Toast.LENGTH_LONG).show();
                 } else {
-
+                    Intent schoolpass = new Intent(InventoryScreen.this, MainActivity.class);
+                    schoolpass.putExtra("enable5","visible");
+                    startActivity(schoolpass);
                 }
             }
         });
