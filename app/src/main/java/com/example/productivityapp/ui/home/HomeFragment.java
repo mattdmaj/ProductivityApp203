@@ -28,7 +28,7 @@ import com.example.productivityapp.databinding.FragmentHomeBinding;
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
-    private int pointsInt;
+    private int pointsInt = 0;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -71,11 +71,17 @@ public class HomeFragment extends Fragment {
 
         PointsViewModel pointsViewModel = new ViewModelProvider(this).get(PointsViewModel.class);
 
-        TextView pointsTextView = (TextView) homeView.findViewById(R.id.money);
+        TextView pointsTextView = homeView.findViewById(R.id.money);
 
         pointsInt = pointsViewModel.getPoints();
 
-        pointsTextView.setText(pointsInt);
+        System.out.println(pointsInt);
+
+        String pointsString = Integer.toString(pointsInt);
+
+        System.out.println(pointsInt);
+
+        pointsTextView.setText(pointsString);
 
         return homeView;
     }

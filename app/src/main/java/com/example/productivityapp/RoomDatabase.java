@@ -50,12 +50,9 @@ public abstract class RoomDatabase extends androidx.room.RoomDatabase {
                 // method; this will NOT be implemented because the user's
                 // points should be saved
 
-                Points points = new Points(0);
+                Points points = new Points(1200);
                 dao.insert(points);
-                Points points2 = new Points(128);
-                dao.insert(points);
-                Points points3 = new Points(18);
-                dao.insert(points);
+                System.out.println(dao.getPoints());
             });
         }
     };
