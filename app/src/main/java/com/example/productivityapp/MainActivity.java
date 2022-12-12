@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        //to mani
         ImageView pic0 = findViewById(R.id.avatar);
         ImageView pic1 = findViewById(R.id.swim);
         ImageView pic2 = findViewById(R.id.doc);

@@ -12,9 +12,9 @@ import com.example.productivityapp.databinding.ActivityMainBinding;
 import com.example.productivityapp.ui.home.HomeFragment;
 
 public class InventoryScreen extends AppCompatActivity {
-    boolean[] own = {true,true,true,true,false,true};
+    boolean[] own = {true,false,false,false,false,false};//tracks own outfits, all but base false by default
 
-    public Bundle change = new Bundle();
+    public Bundle change = new Bundle();//bundles allow communication between files
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +22,9 @@ public class InventoryScreen extends AppCompatActivity {
         String[] seen = {"visible","invisible","invisible","invisible","invisible","invisible"};
         Button base = findViewById(R.id.base_button);
         base.setOnClickListener(new View.OnClickListener() {
+
+            //each of these tracks when the corresponding button is pressed it then will check
+            //if the user owns the outfit they wish to purchase , if not they are given a message
             @Override
             public void onClick(View view) {
                 if(own[0] == false){
