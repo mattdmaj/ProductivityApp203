@@ -1,5 +1,6 @@
 package com.example.productivityapp.ui.home;
 
+import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,17 +12,25 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.productivityapp.InventoryScreen;
 import com.example.productivityapp.MainActivity;
+import com.example.productivityapp.Points;
+import com.example.productivityapp.PointsAdapter;
+import com.example.productivityapp.PointsViewModel;
 import com.example.productivityapp.R;
 import com.example.productivityapp.SettingsScreen;
+import com.example.productivityapp.databinding.ActivityMainBinding;
 import com.example.productivityapp.databinding.FragmentHomeBinding;
 
 
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
+    private int pointsInt = 0;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -51,8 +60,20 @@ public class HomeFragment extends Fragment {
             }
         });
 
-       // final TextView textView = binding.textHome;
-       // homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        PointsViewModel pointsViewModel = new ViewModelProvider(this).get(PointsViewModel.class);
+
+        TextView pointsTextView = homeView.findViewById(R.id.money);
+
+        pointsInt = pointsViewModel.getPoints();
+
+        System.out.println(pointsInt);
+
+        String pointsString = Integer.toString(pointsInt);
+
+        System.out.println(pointsInt);
+
+        pointsTextView.setText(pointsString);
+
         return homeView;
     }
 
