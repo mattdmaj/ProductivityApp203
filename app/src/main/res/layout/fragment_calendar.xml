@@ -32,12 +32,4 @@
         android:text="Schedule Task"
         tools:ignore="HardcodedText" />
 
-    <Button
-        android:id="@+id/delete_button"
-        android:layout_width="178dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="170dp"
-        android:text="Delete Task"
-        tools:ignore="HardcodedText" />
-
 </LinearLayout>

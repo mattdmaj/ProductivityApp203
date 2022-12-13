@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -21,6 +22,13 @@ public class ScheduleTask extends AppCompatActivity {
     public TextView timeView;
     public EditText taskName;
     public Button scheduleButton;
+    public NumberPicker hourPicker;
+    public NumberPicker minutePicker;
+    public NumberPicker secondPicker;
+    public static int hoursToConvert;
+    public static int minutesToConvert;
+    public static int secondsToConvert;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +36,19 @@ public class ScheduleTask extends AppCompatActivity {
         setContentView(R.layout.activity_schedule_task);
 
         timePicker = (TimePicker) findViewById(R.id.timePicker);
-        timeView = (TextView) findViewById(R.id.timeView);
+        timeView = (TextView) findViewById(R.id.time_view);
         taskName = (EditText) findViewById(R.id.taskName);
         scheduleButton = (Button) findViewById(R.id.notification_button);
+        hourPicker = (NumberPicker) findViewById(R.id.hour_picker);
+        minutePicker = (NumberPicker) findViewById(R.id.minute_picker);
+        secondPicker = (NumberPicker) findViewById(R.id.second_picker);
 
         int minute = timePicker.getCurrentMinute();
         int hour = timePicker.getCurrentHour();
+
+        hourPicker.setMaxValue(10);
+        minutePicker.setMaxValue(59);
+        secondPicker.setMaxValue(59);
 
         timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
@@ -62,6 +77,10 @@ public class ScheduleTask extends AppCompatActivity {
             public void onClick(View view) {
                 int hour = timePicker.getCurrentHour();
                 int minute = timePicker.getCurrentMinute();
+                hoursToConvert = hourPicker.getValue();
+                minutesToConvert = minutePicker.getValue();
+                secondsToConvert = secondPicker.getValue();
+
                 String hourString = String.valueOf(hour);
                 StringBuilder minuteString = new StringBuilder().append(minute);
                 if (minute < 10)
