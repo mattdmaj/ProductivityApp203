@@ -62,7 +62,7 @@ public class HomeFragment extends Fragment {
         PointsViewModel pointsViewModel = new ViewModelProvider(this).get(PointsViewModel.class);
 
 
-        Points newPoints = new Points(500);
+        Points newPoints = new Points(1000);
         int pointsInt;
 
         TextView pointsTextView = homeView.findViewById(R.id.money);

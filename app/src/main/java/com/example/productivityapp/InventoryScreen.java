@@ -25,13 +25,13 @@ public class InventoryScreen extends AppCompatActivity {
 
         if( points.getPoints() >= 500) {
             own[1] = true;
-        }else if(points.getPoints() >= 1000){
+        }if(points.getPoints() >= 1000){
             own[2] = true;
-        }else if(points.getPoints() >= 1500){
+        }if(points.getPoints() >= 1500){
             own[3] = true;
-        }else if(points.getPoints() >= 2000){
+        }if(points.getPoints() >= 2000){
             own[4] = true;
-        }else if(points.getPoints() >= 2500) {
+        }if(points.getPoints() >= 2500) {
             own[5] = true;
         }
 
