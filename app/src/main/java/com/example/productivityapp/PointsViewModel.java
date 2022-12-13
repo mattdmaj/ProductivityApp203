@@ -19,7 +19,6 @@ public class PointsViewModel extends AndroidViewModel {
     private ProductivityRepository mRepository;
     private ProductivityDao productivityDao;
 
-    // this is Originally an integer, but may need to become a liveData list
     private final int mPoints;
 
     public PointsViewModel(Application application){
@@ -32,6 +31,5 @@ public class PointsViewModel extends AndroidViewModel {
 
     public int getPoints() { return mPoints; }
 
-    /* THIS COULD BE IMPLEMENTED LATER.
-    @Update */
+    public void update(Points points) { mRepository.update(points);}
 }

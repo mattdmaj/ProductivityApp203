@@ -12,7 +12,7 @@ public class Points {
     @PrimaryKey
     @NonNull
     @ColumnInfo(name = "points")
-    public int mPoints = 1200;
+    public int mPoints = 0;
 
     public Points(@NonNull int points) {this.mPoints = points;}
 

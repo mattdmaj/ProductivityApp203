@@ -1,6 +1,7 @@
 package com.example.productivityapp;
 
 import android.app.Application;
+import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
@@ -17,7 +18,6 @@ public class ProductivityRepository {
     ProductivityRepository(Application application){
         RoomDatabase db = RoomDatabase.getDatabase(application);
         mProductivityDao = db.productivityDao();
-        //mPoints = mProductivityDao.getPoints();
         //run in background task
         Executors.newSingleThreadExecutor().execute(new Runnable() {
             @Override
@@ -31,4 +31,11 @@ public class ProductivityRepository {
         return mPoints;
     }
 
+    // You must call this on a non-UI thread or your app will throw an exception. Room ensures
+    // that you're not doing any long running operations on the main thread, blocking the UI.
+    void update(Points points) {
+        RoomDatabase.databaseWriteExecutor.execute(() -> {
+            mProductivityDao.updatePoints(points);
+        });
+    }
 }

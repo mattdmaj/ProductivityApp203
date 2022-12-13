@@ -29,7 +29,6 @@ import com.example.productivityapp.databinding.FragmentHomeBinding;
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
-    private int pointsInt = 0;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -62,15 +61,19 @@ public class HomeFragment extends Fragment {
 
         PointsViewModel pointsViewModel = new ViewModelProvider(this).get(PointsViewModel.class);
 
+
+        Points newPoints = new Points(500);
+        int pointsInt;
+
         TextView pointsTextView = homeView.findViewById(R.id.money);
 
         pointsInt = pointsViewModel.getPoints();
 
-        System.out.println(pointsInt);
+        // if we have an int and set it equal to a points object's
+        // getPoints, we can update the points this way
+        pointsInt = newPoints.getPoints();
 
         String pointsString = Integer.toString(pointsInt);
-
-        System.out.println(pointsInt);
 
         pointsTextView.setText(pointsString);
 
