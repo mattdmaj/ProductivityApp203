@@ -66,11 +66,7 @@ public class HomeFragment extends Fragment {
 
         pointsInt = pointsViewModel.getPoints();
 
-        System.out.println(pointsInt);
-
         String pointsString = Integer.toString(pointsInt);
-
-        System.out.println(pointsInt);
 
         pointsTextView.setText(pointsString);
 

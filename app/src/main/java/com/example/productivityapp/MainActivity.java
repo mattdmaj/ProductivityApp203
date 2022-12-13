@@ -53,14 +53,14 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        //to mani
+        //to manipulate the images stored on screen you need to call them as objects
         ImageView pic0 = findViewById(R.id.avatar);
         ImageView pic1 = findViewById(R.id.swim);
         ImageView pic2 = findViewById(R.id.doc);
         ImageView pic3 = findViewById(R.id.gang);
         ImageView pic4 = findViewById(R.id.nes);
         ImageView pic5 = findViewById(R.id.school);
-
+        //every image is stored on screen, the right one is made visible when the button is pressed
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             String enable0 = extras.getString("enable");
