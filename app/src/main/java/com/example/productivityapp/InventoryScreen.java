@@ -12,38 +12,30 @@ import com.example.productivityapp.databinding.ActivityMainBinding;
 import com.example.productivityapp.ui.home.HomeFragment;
 
 public class InventoryScreen extends AppCompatActivity {
-    boolean[] own = {true,true,false,false,false,false};//tracks own outfits, all but base false by default
+    boolean[] own = {true,false,false,false,false,false};//tracks own outfits, all but base false by default
 
     public Bundle change = new Bundle();//bundles allow communication between files
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventory_screen);
-        ProductivityDao productivityDao = new ProductivityDao() {
-            @Override
-            public int getPoints() {
-                return 0;
-            }
-
-            @Override
-            public void insert(Points points) {
-
-            }
-        };
-
+        Points points = new Points(1000);
+        String news =  Integer.toString(points.getPoints());
         String[] seen = {"visible","invisible","invisible","invisible","invisible","invisible"};
-        Button base = findViewById(R.id.base_button);
-        if(productivityDao.getPoints() == 500) {
+
+        if( points.getPoints() >= 500) {
             own[1] = true;
-        }else if(productivityDao.getPoints() == 1000){
+        }else if(points.getPoints() >= 1000){
             own[2] = true;
-        }else if(productivityDao.getPoints() == 1500){
+        }else if(points.getPoints() >= 1500){
             own[3] = true;
-        }else if(productivityDao.getPoints() == 2000){
+        }else if(points.getPoints() >= 2000){
             own[4] = true;
-        }else if(productivityDao.getPoints() == 2500){
+        }else if(points.getPoints() >= 2500) {
             own[5] = true;
         }
+
+        Button base = findViewById(R.id.base_button);
         base.setOnClickListener(new View.OnClickListener() {
             //each of these tracks when the corresponding button is pressed it then will check
             //if the user owns the outfit they wish to purchase , if not they are given a message
@@ -55,6 +47,7 @@ public class InventoryScreen extends AppCompatActivity {
                     Intent basepass = new Intent(InventoryScreen.this, MainActivity.class);
                     basepass.putExtra("enable","visible");
                     startActivity(basepass);
+
                 }
             }
         });
