@@ -30,6 +30,8 @@ public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
 
+    private Points newPoints = new Points(1000);
+    private int pointsInt;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -61,9 +63,6 @@ public class HomeFragment extends Fragment {
 
         PointsViewModel pointsViewModel = new ViewModelProvider(this).get(PointsViewModel.class);
 
-
-        Points newPoints = new Points(500);
-        int pointsInt;
 
         TextView pointsTextView = homeView.findViewById(R.id.money);
 
